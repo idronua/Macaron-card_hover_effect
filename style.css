@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.card
+{
+	position: relative;
+	width: 600px;
+	height: 350px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	border-radius: 20px;
+	transition: 0.5s;
+}
+
+.card .circle
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.card .circle::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #A2C5C4;
+	clip-path: circle(120px at center);
+	transition: 0.5s;
+}
+.card:hover .circle:before
+{
+	background: #262624;
+	clip-path: circle(400px at center);
+
+}
+
+.card img
+{
+	width: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	transition: 0.5s;
+}
+.card:hover img
+{
+	width: 90%;
+	left: 70%;
+}
+
+.card .content
+{
+	position: relative;
+	width: 30%;
+	left: 20%;
+	padding: 20px, 20px, 20px, 40px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	color: #fff;
+}
+
+.card:hover .content
+{
+	left: 20px;
+	opacity: 1;
+	visibility: visible;
+}
+
+.card .content h2
+{
+	text-transform: uppercase;
+	font-size: 2em;
+	line-height: 1em;
+	margin-bottom: 10px;
+}
+
+.card .content a
+{
+	position: relative;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background: #A2C5C4;
+	color: #111;
+	margin-top: 20px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.card .content a:hover
+{
+	background: #F98200;
+}
+
+@media (max-width: 350px)
+{
+	.card img
+	{
+		width: 80%
+	}
+	.card:hover img
+	{
+		left: 50%;
+		top: 0;
+		width: 120%;
+	}
+	.card:hover .content
+	{
+		left: 0;
+		width: 80%;
+		text-align: center;
+		align-self: end;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 0;
+		padding-bottom: 20px;
+	}
+	.card .content h2
+	{
+		padding-bottom: 15px;
+	}
+}
